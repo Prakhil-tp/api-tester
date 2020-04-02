@@ -44,8 +44,8 @@ For development, you will only need Node.js and a node global package installed 
 
 ## Install
 
-    $ git clone git@ssh.dev.azure.com:v3/atkearneycorp/Digital%20Labs/Digital%20Labs
-    $ cd Digital%20Labs
+    $ git clone https://github.com/Prakhil-tp/api-tester.git
+    $ cd api-tester
     $ npm install
 
 ## Configure app
