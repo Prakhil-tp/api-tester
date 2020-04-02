@@ -25,6 +25,7 @@ const synchronousRequsts = async () => {
  }
 }
 const asynchrounsRequsts = async () => {
+
   function handleRequestResult () {
     let endTime = new Date().getTime();
     helpers.appendToFile(OUTPUT_FILE,{

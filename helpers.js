@@ -1,7 +1,7 @@
 const fs = require('fs');
 const csv = require('csvtojson');
 
-const { OUTPUT_FILE, OUTPUT_AVG_FILE } = process.env;
+const { OUTPUT_FILE, OUTPUT_AVG_FILE, REQUEST_LIMIT } = process.env;
 
 // create output csv files
 const createOutputCSV = async () => {
@@ -22,9 +22,14 @@ async function appendToFile(filePath,contentObj) {
 }
 
 async function createAvg() {
-  const testCaseData = await csv().fromFile(OUTPUT_FILE);
+  let testCaseData = [];
+  let limit = 2*parseInt(REQUEST_LIMIT);
+  do{
+    testCaseData = await csv().fromFile('results.csv');
+  } while(testCaseData.length !== limit)
+
   // returns an object contains average details
-  const avgData = testcaseStr => {
+  const avgData = (testcaseStr) => {
     const avgData = testCaseData
     .filter(({ TESTCASE }) => TESTCASE.includes(testcaseStr))
     .reduce((acc, el) => {
