@@ -5,4 +5,5 @@ const testCase = require('./testCases');
   await helpers.createOutputCSV();
   await testCase.synchronousRequsts();
   await testCase.asynchrounsRequsts();
+  await helpers.createAvg();
 })();
