@@ -1,6 +1,8 @@
-const { synchronousRequsts, asynchrounsRequsts } = require('./testCases');
+const helpers = require('./helpers');
+const testCase = require('./testCases');
 
 (async () => {
-  await synchronousRequsts();
-  await asynchrounsRequsts();
+  await helpers.createOutputCSV();
+  await testCase.synchronousRequsts();
+  await testCase.asynchrounsRequsts();
 })();
