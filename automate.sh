@@ -6,7 +6,7 @@ while [ $SECONDS -lt $end ];
 do
   npm start
   mkdir -p output/
-  cp ./results.csv "./output/resutls_${counter}.csv" 
+  cp ./results.csv "./output/results_${counter}.csv" 
   counter=$((counter+=1))
 done
 cp ./avg.csv ./output/avg.csv
